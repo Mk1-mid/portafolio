@@ -1,0 +1,23 @@
+body{
+    background: linear-gradient(135deg, #0F2A38, #4A545E);
+    color: #C7D5E0;    
+    font-family: "Inter", sans-serif;
+    
+}
+a {
+        color: #C7D5E0;
+        text-decoration: none;
+        font-style: italic;
+}
+h1{
+    font-family: "Space Grotesk", sans-serif;
+    color: #ffffff;
+}
+p{
+    font-family: "Inter", sans-serif;
+    color: #E5E7EB;
+}
+small{
+    font-family: "Fira Sans", sans-serif;
+    color: #C7D5E0;
+    }
