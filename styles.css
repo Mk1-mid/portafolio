@@ -2,9 +2,17 @@ body{
     background: linear-gradient(135deg, #0F2A38, #4A545E);
     color: #C7D5E0;    
     font-family: "Inter", sans-serif;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
     
 }
+header{
+    text-align: center;
+    margin-bottom: 40px;
+}
 a {
+    font-family: "JetBrains Mono", monospace;
         color: #C7D5E0;
         text-decoration: none;
         font-style: italic;
@@ -21,3 +29,18 @@ small{
     font-family: "Fira Sans", sans-serif;
     color: #C7D5E0;
     }
+div.about-me {
+    background-color: #1E2A38;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: auto;
+}
+img.profile-pic {
+    width: 150px;
+    height: 150px;
+    align-self: left;
+    border-radius: 50%; 
+    margin-bottom: 15px;    
+}
