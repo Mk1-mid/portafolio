@@ -30,13 +30,15 @@ small{
     color: #C7D5E0;
     }
 div.about-me {
-    background-color: #1E2A38;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
     padding: 20px;
-    border-radius: 10px;
     margin-bottom: 40px;
     text-align: center;
     padding: auto;
     padding-right: 125px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 img.profile-pic {
     width: 80px;
