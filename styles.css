@@ -7,9 +7,9 @@
 /* MODO OSCURO - Púrpura + Naranja */
 :root {
     /* Fondos */
-    --color-bg-primary: #0A0E27;
-    --color-bg-secondary: #1A1F3A;
-    --color-bg-tertiary: #2A2F4A;
+    --color-bg-primary: #0D0221;       /* Negro Púrpura muy profundo */
+    --color-bg-secondary: #240B36;     /* Púrpura medio */
+    --color-bg-tertiary: #310E68;      /* Púrpura eléctrico profundo */
     
     /* Textos */
     --color-text-primary: #E2E8F0;
@@ -24,11 +24,11 @@
     --color-accent-secondary-hover: #FF8A5B;
     
     /* Elementos UI */
-    --color-card-bg: rgba(26, 31, 58, 0.6);
-    --color-card-border: rgba(124, 58, 237, 0.2);
-    --color-hover-bg: rgba(124, 58, 237, 0.1);
-    --color-navbar-bg: rgba(10, 14, 39, 0.95);
-    --color-section-bg: rgba(26, 31, 58, 0.4);
+    --color-card-bg: rgba(49, 14, 104, 0.4);
+    --color-card-border: rgba(124, 58, 237, 0.3);
+    --color-hover-bg: rgba(124, 58, 237, 0.15);
+    --color-navbar-bg: #0D0221;
+    --color-section-bg: rgba(36, 11, 54, 0.35);
     
     /* Sombras y efectos */
     --shadow-color: rgba(124, 58, 237, 0.3);
@@ -38,28 +38,28 @@
 /* MODO CLARO - Púrpura + Naranja */
 html.light-mode {
     /* Fondos */
-    --color-bg-primary: #FAFBFC;       /* Gris casi blanco */
-    --color-bg-secondary: #F5F7FB;     /* Gris muy suave */
-    --color-bg-tertiary: #E9D5FF;
+    --color-bg-primary: #FBF8FF;       /* Lavanda blanquecino */
+    --color-bg-secondary: #F3EEFF;     /* Lila muy suave */
+    --color-bg-tertiary: #E9E0FF;      /* Lila suave */
     
     /* Textos */
-    --color-text-primary: #1E293B;
-    --color-text-secondary: #334155;
-    --color-text-highlight: #0F172A;
-    --color-text-muted: #64748B;
+    --color-text-primary: #2D1B4E;     /* Púrpura muy oscuro para lectura */
+    --color-text-secondary: #4A3A69;   /* Púrpura grisáceo */
+    --color-text-highlight: #1A0B2E;
+    --color-text-muted: #7E6D9E;
     
     /* Acentos */
-    --color-accent: #6D28D9;           /* Púrpura más oscuro */
-    --color-accent-hover: #7C3AED;
-    --color-accent-secondary: #EA580C; /* Naranja más oscuro */
-    --color-accent-secondary-hover: #F97316;
+    --color-accent: #7C3AED;           /* Púrpura vibrante */
+    --color-accent-hover: #8B5CF6;
+    --color-accent-secondary: #F97316; /* Naranja */
+    --color-accent-secondary-hover: #FB923C;
     
     /* Elementos UI */
-    --color-card-bg: rgba(255, 255, 255, 0.9);
-    --color-card-border: rgba(109, 40, 217, 0.15);
-    --color-hover-bg: rgba(109, 40, 217, 0.05);
-    --color-navbar-bg: rgba(255, 255, 255, 0.95);
-    --color-section-bg: rgba(255, 255, 255, 0.7);
+    --color-card-bg: rgba(255, 255, 255, 0.6);
+    --color-card-border: rgba(124, 58, 237, 0.15);
+    --color-hover-bg: rgba(124, 58, 237, 0.08);
+    --color-navbar-bg: #FBF8FF;
+    --color-section-bg: rgba(255, 255, 255, 0.4);
     
     /* Sombras y efectos */
     --shadow-color: rgba(109, 40, 217, 0.15);
@@ -91,12 +91,13 @@ html {
 }
 
 body{
-    background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary));
+    background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary), var(--color-bg-tertiary));
     color: var(--color-text-primary);    
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
     background-attachment: fixed;
     margin: 0;
-    padding: 0;
+    padding: 70px 0 0 0;
     min-height: 100vh;
     transition: background 0.4s ease, color 0.4s ease;
 }
@@ -139,16 +140,17 @@ header img:hover {
 }
 
 header h1 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--color-text-highlight);
     margin: 0;
     font-size: clamp(1.8rem, 5vw, 2.5rem);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-text-highlight), var(--color-text-secondary));
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6B35, #7C3AED, #FF8A5B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: all 0.3s ease-in-out;
+    text-shadow: 0 4px 30px rgba(255, 107, 53, 0.3);
 }
 
 header h1:hover {
@@ -157,7 +159,7 @@ header h1:hover {
 }
 
 header h3 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--color-text-secondary);
     margin: 0;
     font-size: clamp(0.9rem, 3vw, 1.1rem);
@@ -167,10 +169,9 @@ header h3 {
 }
 
 a {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Manrope", sans-serif;
     color: var(--color-text-primary);
     text-decoration: none;
-    font-style: italic;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -194,20 +195,33 @@ a:hover::after {
     width: 100%;
 }
 h1 {
-    font-family: "Space Grotesk", sans-serif;
-    color: var(--color-text-highlight);
+    font-family: "Poppins", sans-serif;
+    color: var(--color-accent);
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 30px;
     margin-left: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-secondary), transparent);
+    border-radius: 2px;
 }
 p {
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: var(--color-text-secondary);
     line-height: 1.6;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 small {
-    font-family: "Fira Sans", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: #C7D5E0;
 }
 div#about-me {
@@ -233,11 +247,24 @@ div#about-me {
     }
 }
 #about-me h2 {
-    font-family: "Space Grotesk", sans-serif;
-    color: var(--color-text-highlight);
+    font-family: "Poppins", sans-serif;
+    color: var(--color-accent);
     margin-top: 0;
     margin-bottom: 30px;
     font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    position: relative;
+    display: inline-block;
+}
+
+#about-me h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-secondary), transparent);
+    border-radius: 2px;
 }
 .about-cards {
     display: grid;
@@ -265,16 +292,16 @@ div#about-me {
 
 /* Estilos específicos para modo claro */
 html.light-mode .card:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(44, 62, 80, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    border-color: var(--color-accent);
 }
 
 html.light-mode .card:hover h4 {
-    color: #0F2A38;
+    color: var(--color-text-highlight);
 }
 
 html.light-mode .card:hover p {
-    color: #2C3E50;
+    color: var(--color-text-primary);
 }
 
 /* Light mode - Acentos naranja en hovers */
@@ -293,12 +320,10 @@ html.light-mode .projects-table tbody tr:hover {
 }
 
 html.light-mode .contact-btn:hover {
-    border-color: #EA580C;
-    background: linear-gradient(135deg, #E2E8F0, #6D28D9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.2);
+    background: linear-gradient(135deg, #6D28D9, #7C3AED);
+    border-color: #6D28D9;
+    color: #FFFFFF;
+    box-shadow: 0 8px 25px rgba(109, 40, 217, 0.4);
 }
 
 html.light-mode .footer-section ul li a:hover {
@@ -323,7 +348,7 @@ html.light-mode .theme-toggle:hover {
     margin-top: 0;
     margin-bottom: 12px;
     color: var(--color-text-highlight);
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -331,7 +356,7 @@ html.light-mode .theme-toggle:hover {
 .card p {
     margin: 0;
     color: var(--color-text-secondary);
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -348,7 +373,7 @@ html.light-mode .theme-toggle:hover {
 .projects-table thead th {
     padding: 16px;
     text-align: left;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--color-text-highlight);
     background: var(--color-hover-bg);
     font-weight: 600;
@@ -375,7 +400,7 @@ html.light-mode .theme-toggle:hover {
 
 .projects-table td {
     padding: 16px;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: var(--color-text-secondary);
     font-size: 0.95rem;
 }
@@ -494,14 +519,15 @@ html.light-mode .theme-toggle:hover {
     }
 }
 
-/* ============ NAVBAR ============ */
+/* ============ NAVBAR - CORRECCIÓN RESPONSIVE ============ */
 .navbar {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     background: var(--color-navbar-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 
-                0 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     animation: slideDown 0.6s ease-out;
     transition: background 0.4s ease, box-shadow 0.4s ease;
@@ -519,20 +545,27 @@ html.light-mode .theme-toggle:hover {
 }
 
 .nav-logo {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--color-text-highlight), var(--color-text-secondary));
+    background: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
     transition: all 0.3s ease;
-    z-index: 1001;
+    z-index: 1002;
+    order: 1;
 }
 
 .nav-logo:hover {
     transform: scale(1.05);
+}
+
+/* Contenedor para hamburguesa + theme toggle */
+.nav-container::after {
+    content: '';
+    display: none;
 }
 
 .nav-menu {
@@ -541,6 +574,7 @@ html.light-mode .theme-toggle:hover {
     margin: 0;
     padding: 0;
     gap: 30px;
+    order: 2;
 }
 
 .nav-item {
@@ -548,7 +582,7 @@ html.light-mode .theme-toggle:hover {
 }
 
 .nav-link {
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: var(--color-text-primary);
     text-decoration: none;
     font-weight: 500;
@@ -564,7 +598,7 @@ html.light-mode .theme-toggle:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-accent), transparent);
+    background: linear-gradient(90deg, var(--color-accent-secondary), transparent);
     transition: width 0.3s ease;
 }
 
@@ -574,7 +608,6 @@ html.light-mode .theme-toggle:hover {
 
 .nav-link:hover::after {
     width: 100%;
-    background: linear-gradient(90deg, var(--color-accent-secondary), transparent);
 }
 
 .nav-link.active {
@@ -583,7 +616,6 @@ html.light-mode .theme-toggle:hover {
 
 .nav-link.active::after {
     width: 100%;
-    background: linear-gradient(90deg, var(--color-accent-secondary), transparent);
 }
 
 /* ============ HAMBURGER MENU ============ */
@@ -593,13 +625,14 @@ html.light-mode .theme-toggle:hover {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px 12px;
-    z-index: 1001;
-    gap: 6px;
+    padding: 8px;
+    z-index: 1002;
+    gap: 5px;
+    order: 3;
 }
 
 .hamburger-line {
-    width: 28px;
+    width: 25px;
     height: 3px;
     background: var(--color-text-secondary);
     border-radius: 3px;
@@ -607,7 +640,7 @@ html.light-mode .theme-toggle:hover {
 }
 
 .hamburger.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
+    transform: rotate(45deg) translate(8px, 8px);
     background: var(--color-accent-secondary);
 }
 
@@ -616,49 +649,143 @@ html.light-mode .theme-toggle:hover {
 }
 
 .hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(7px, -7px);
     background: var(--color-accent-secondary);
 }
 
+/* ============ THEME TOGGLE BUTTON ============ */
+.theme-toggle {
+    background: var(--color-hover-bg);
+    border: 1px solid var(--color-card-border);
+    color: var(--color-text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 1002;
+    order: 4;
+    margin-left: 15px;
+}
+
+.theme-toggle:hover {
+    background: linear-gradient(135deg, var(--color-accent-secondary), rgba(255, 107, 53, 0.2));
+    color: var(--color-accent-secondary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    border-color: var(--color-accent-secondary);
+}
+
+.theme-toggle i {
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle.light-mode i {
+    transform: rotate(180deg);
+}
+
+/* ============ FIX MODO CLARO ============ */
+html.light-mode .hamburger-line {
+    background: #334155;
+}
+
+html.light-mode .hamburger.active .hamburger-line:nth-child(1),
+html.light-mode .hamburger.active .hamburger-line:nth-child(3) {
+    background: #EA580C;
+}
+
+/* ============ RESPONSIVE MOBILE ============ */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
     .hamburger {
         display: flex;
     }
     
     .nav-container {
         padding: 0 20px;
+        height: 70px;
     }
     
     .nav-menu {
-        position: absolute;
+        position: fixed;
         top: 70px;
         left: 0;
         width: 100%;
+        height: 0;
         flex-direction: column;
-        background: rgba(15, 26, 40, 0.98);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--color-navbar-bg);
+        border-bottom: 2px solid var(--color-accent);
         gap: 0;
-        padding: 20px 0;
-        max-height: 0;
+        padding: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: height 0.3s ease, padding 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
     
     .nav-menu.active {
-        max-height: 500px;
+        height: auto;
+        max-height: calc(100vh - 70px);
+        padding: 20px 0;
     }
     
     .nav-item {
-        padding: 15px 20px;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .nav-link {
-        font-size: 0.95rem;
+        display: block;
+        padding: 15px 20px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        margin-left: 10px;
     }
 }
 
+/* Modo claro - menú móvil */
+html.light-mode .nav-menu {
+    background: var(--color-bg-primary);
+    border-bottom: 2px solid var(--color-accent);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+}
+
+html.light-mode .nav-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .nav-link {
+    color: #334155;
+}
+
+html.light-mode .nav-link:hover,
+html.light-mode .nav-link.active {
+    color: #EA580C;
+}
+
 @media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
     .nav-container {
         padding: 0 15px;
         height: 60px;
@@ -673,7 +800,23 @@ html.light-mode .theme-toggle:hover {
     }
     
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+    
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        margin-left: 8px;
+    }
+    
+    .hamburger {
+        padding: 6px;
+    }
+    
+    .hamburger-line {
+        width: 22px;
     }
 }
 
@@ -691,11 +834,22 @@ html.light-mode .theme-toggle:hover {
 
 .skills-section h2 {
     text-align: center;
-    font-family: "Space Grotesk", sans-serif;
-    color: var(--color-text-highlight);
+    font-family: "Poppins", sans-serif;
+    color: var(--color-accent);
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-top: 0;
     margin-bottom: 50px;
+    position: relative;
+}
+
+.skills-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-secondary), var(--color-accent));
+    margin: 12px auto 0;
+    border-radius: 2px;
 }
 
 .skills-container {
@@ -707,7 +861,7 @@ html.light-mode .theme-toggle:hover {
 }
 
 .skill-category h3 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--color-text-secondary);
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -745,7 +899,7 @@ html.light-mode .theme-toggle:hover {
 }
 
 .skill-badge span {
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: var(--color-text-primary);
     font-size: 0.85rem;
     font-weight: 500;
@@ -801,8 +955,8 @@ html.light-mode .theme-toggle:hover {
 }
 
 .contact-section h2 {
-    font-family: "Space Grotesk", sans-serif;
-    color: var(--color-text-highlight);
+    font-family: "Poppins", sans-serif;
+    color: var(--color-accent);
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 15px;
 }
@@ -824,19 +978,20 @@ html.light-mode .theme-toggle:hover {
 }
 
 .contact-btn {
-    background: linear-gradient(135deg, var(--color-hover-bg), var(--color-section-bg));
-    border: 2px solid var(--color-card-border);
-    color: var(--color-text-highlight);
+    background: linear-gradient(135deg, #FF6B35, #FF8A5B);
+    border: 2px solid #FF6B35;
+    color: #FFFFFF;
     padding: 14px 32px;
     border-radius: 12px;
     text-decoration: none;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
 }
 
 .contact-btn i {
@@ -844,14 +999,11 @@ html.light-mode .theme-toggle:hover {
 }
 
 .contact-btn:hover {
-    background: linear-gradient(135deg, var(--color-accent-secondary), rgba(255, 107, 53, 0.2));
-    border-color: var(--color-accent-secondary);
-    background: linear-gradient(135deg, #6D28D9, #E2E8F0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(135deg, #7C3AED, #9333EA);
+    border-color: #7C3AED;
+    color: #FFFFFF;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
 }
 
 @media (max-width: 640px) {
@@ -887,7 +1039,7 @@ html.light-mode .theme-toggle:hover {
 }
 
 .footer-section h4 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--color-text-highlight);
     font-size: 1.1rem;
     margin-bottom: 15px;
@@ -915,7 +1067,7 @@ html.light-mode .theme-toggle:hover {
     color: var(--color-text-primary);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-style: normal;
 }
 
@@ -991,52 +1143,3 @@ html.light-mode .theme-toggle:hover {
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 0;
-        margin-top: 0;
-    }
-}
-
-/* ============ THEME TOGGLE BUTTON ============ */
-.theme-toggle {
-    background: var(--color-hover-bg);
-    border: 1px solid var(--color-card-border);
-    color: var(--color-text-primary);
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    margin-left: 15px;
-}
-
-.theme-toggle:hover {
-    background: linear-gradient(135deg, var(--color-accent-secondary), rgba(255, 107, 53, 0.2));
-    color: var(--color-accent-secondary);
-    transform: scale(1.15);
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-    border-color: var(--color-accent-secondary);
-}
-
-.theme-toggle i {
-    transition: transform 0.4s ease;
-}
-
-.theme-toggle.light-mode i {
-    transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-    .theme-toggle {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-        margin-left: 10px;
-    }
-}
