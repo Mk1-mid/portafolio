@@ -372,8 +372,6 @@ html.light-mode .theme-toggle:hover {
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
     border-color: var(--color-accent-secondary);
 }
-    border-color: rgba(255, 255, 255, 0.15);
-}
 
 .projects-table td {
     padding: 16px;
