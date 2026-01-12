@@ -39,6 +39,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Función para Scroll Suave Personalizado con duración controlada
+    function smoothScroll(targetId, duration) {
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        const targetPosition = target.offsetTop - 70; // 70px es la altura del navbar
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        // Función de suave (easeInOutQuad)
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+    }
+
     // ============ HAMBURGER MENU FUNCTIONALITY ============
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -52,18 +81,29 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
         });
 
-        // Cerrar menu cuando se hace click en un link
+        // Cerrar menu cuando se hace click en un link + Smooth Scroll
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Solo aplicar si es un link interno
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    smoothScroll(href, 800); // 800ms = 0.8s para un movimiento suave y elegante
+                    history.pushState(null, null, href);
+                }
+
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
 
-        // El logo NO cierra el menú, solo navega
+        // Smooth scroll para el logo también
         navLogo.addEventListener('click', function(e) {
-            // Permite que el navegador maneje el link normalmente
-            // No cierra el menú
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            smoothScroll(href, 800);
+            history.pushState(null, null, href);
         });
 
         // Cerrar menu si se hace click fuera del navbar
@@ -113,23 +153,23 @@ document.querySelectorAll('.card, .skill-badge, .projects-table tbody tr').forEa
 // ============ SMOOTH SCROLL BEHAVIOR ============
 // El scroll suave ya está en el CSS, pero aquí puedes agregar lógica adicional si necesitas
 
-// ============ ACTIVE LINK EN LA NAVBAR ============
-window.addEventListener('scroll', function() {
-    let current = '';
-    const sections = document.querySelectorAll('section, header');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute('id');
-        }
-    });
+// ============ ACTIVE LINK EN LA NAVBAR (OPTIMIZADO) ============
+const sectionObserverOptions = {
+    threshold: 0.5,
+    rootMargin: "-70px 0px 0px 0px"
+};
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
         }
     });
+}, sectionObserverOptions);
+
+document.querySelectorAll('section, header').forEach(section => {
+    sectionObserver.observe(section);
 });
