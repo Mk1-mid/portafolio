@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Migue</title>
+
+<!-- JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Skip to content link para accesibilidad -->
+    <a href="#inicio" class="skip-to-content">Ir al contenido principal</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo" aria-label="Inicio">Portafolio Personal</a>
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#about-me" class="nav-link">Sobre Mí</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <!-- Botón Modo Oscuro/Claro -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro/claro">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header id="inicio">
+        <img src="img/logo_miguel.jpeg" alt="Foto de perfil de Miguel" class="profile-pic">
+        <h1>Portafolio de Miguel</h1>
+        <h3>Software Developer & Problem Solver</h3>
+    </header>
+
+    <div id="about-me">
+    <h2>About Me</h2>
+
+    <div class="about-cards">
+    <div class="card">
+        <h4>Quién soy</h4>
+        <p>Soy Migue, desarrollador de software en formación, enfocado en construir
+            bases sólidas en programación y buenas prácticas. Me interesa entender
+            a fondo cómo funcionan los sistemas y cómo hacer que el código sea claro, útil y mantenible.</p>
+    </div>
+
+    <div class="card">
+        <h4>Qué hago</h4>
+        <p>Trabajo principalmente con Python y desarrollo frontend, creando proyectos
+        académicos y personales donde practico lógica, estructuras, diseño de interfaces 
+        y resolución de problemas reales paso a paso.</p>
+    </div>
+
+    <div class="card">
+        <h4>Qué me mueve</h4>
+        <p>Me motiva aprender constantemente, mejorar como desarrollador y usar la 
+        tecnología como una herramienta para aportar valor. Disfruto los retos, 
+        los errores que enseñan y los proyectos que me sacan de la zona cómoda</p>
+    </div>
+
+    <div class="card">
+        <h4>Qué me hace diferente</h4>
+        <p>Combino la programación con intereses creativos como la cocina y la 
+        escritura, lo que me da una forma distinta de pensar y resolver problemas
+        . Además, tengo una fuerte vocación por enseñar y compartir lo que aprendo.</p>
+    </div>
+    </div>
+</div>
+
+
+    <h1>Actividades</h1>
+<table class="projects-table" id="projects">
+    <thead>
+        <tr>
+            <th>Proyecto</th>
+            <th>Enlace</th>
+            <th>Lenguaje</th>
+            <th>Fecha</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Eco Ride</td>
+            <td><a href="https://github.com/Mk1-mid/EcoRide.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Eco Ride en GitHub">Eco Ride</a></td>
+            <td>Python</td>
+            <td>Nov 11, 2024</td>
+            <td>Simulador de movilidad ecológica con decisiones dinámicas.</td>
+        </tr>
+        <tr>
+            <td>Actividad 1</td>
+            <td><a href="https://github.com/Mk1-mid/Actividad-1-python.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Actividad 1 en GitHub">Actividad 1</a></td>
+            <td>Python</td>
+            <td>Nov 12, 2024</td>
+            <td>Ejercicios de lógica básica y fundamentos de programación.</td>
+        </tr>
+        <tr>
+            <td>Actividad 2</td>
+            <td><a href="https://github.com/Mk1-mid/Actividad-2-python.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Decisiones y Ciclos en Python en GitHub">Decisiones y Ciclos en Python</a></td>
+            <td>Python</td>
+            <td>Nov 15, 2024</td>
+            <td>Condicionales y ciclos aplicados a problemas reales.</td>
+        </tr>
+        <tr>
+            <td>Actividad 3</td>
+            <td><a href="https://github.com/Mk1-mid/Actividad-3-python.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Estructuras de datos en Python en GitHub">Estructuras de datos en Python</a></td>
+            <td>Python</td>
+            <td>Nov 22, 2024</td>
+            <td>Estructuras de datos: listas, diccionarios y manejo de información.</td>
+        </tr>
+        <tr>
+            <td>Sangre por Fortuna</td>
+            <td><a href="https://github.com/Mk1-mid/game.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Sangre por Fortuna en GitHub">sangre por fortuna</a></td>
+            <td>Python</td>
+            <td>Nov 18, 2024</td>
+            <td>Juego narrativo con sistema de decisiones y múltiples finales.</td>
+        </tr>
+        <tr>
+            <td>Historia de Usuario</td>
+            <td><a href="https://github.com/Mk1-mid/historia-de-usuario-python.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Historia de Usuario en GitHub">historia-de-usuario-python</a></td>
+            <td>Python</td>
+            <td>Nov 22, 2024</td>
+            <td>Simulación de requerimientos y flujo de usuarios.</td>
+        </tr>
+        <tr>
+            <td>Eldarûn</td>
+            <td><a href="https://github.com/ElvesLatte/Almers.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Eldarûn en GitHub">Eldarûn</a></td>
+            <td>HTML / CSS</td>
+            <td>Dec 1, 2024</td>
+            <td>Proyecto colaborativo enfocado en narrativa y lógica.</td>
+        </tr>
+        <tr>
+            <td>CRUDScope</td>
+            <td><a href="https://github.com/Mk1-mid/CRUDScope-HTML-MediaPanel.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a CRUDScope en GitHub">CRUDScope – HTML MediaPanel</a></td>
+            <td>HTML / CSS</td>
+            <td>Dec 5, 2024</td>
+            <td>Panel visual tipo sistema operativo para practicar front-end.</td>
+        </tr>
+        <tr>
+            <td>Mini OS</td>
+            <td><a href="https://github.com/Mk1-mid/CrudActivity---Mini-OS.git" target="_blank" rel="noopener noreferrer" aria-label="Enlace a CrudActivity Mini OS en GitHub">CrudActivity---Mini-OS</a></td>
+            <td>HTML / CSS</td>
+            <td>Dec 6, 2024</td>
+            <td>Interfaz tipo sistema con ventanas y secciones interactivas.</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <h2>Tecnologías & Skills</h2>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Lenguajes</h3>
+            <div class="skills-grid">
+                <div class="skill-badge">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+                <div class="skill-badge">
+                    <i class="fas fa-palette"></i>
+                    <span>UI Design</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Responsive</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fas fa-bezier-curve"></i>
+                    <span>Animaciones</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Herramientas</h3>
+            <div class="skills-grid">
+                <div class="skill-badge">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-badge">
+                    <i class="fas fa-code"></i>
+                    <span>VS Code</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2>Contáctame</h2>
+    <p class="contact-subtitle">¿Interesado en trabajar juntos o simplemente quieres saludar?</p>
+    <div class="contact-container">
+        <a href="mailto:callerestrepomigueldavid@gmail.com" class="contact-btn" aria-label="Enviar email a Miguel">
+            <i class="fas fa-envelope"></i> Enviar Email
+        </a>
+        <a href="https://github.com/Mk1-mid" target="_blank" rel="noopener noreferrer" class="contact-btn" aria-label="Visitar perfil de GitHub">
+            <i class="fab fa-github"></i> Visita GitHub
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Migue</h4>
+            <p>Desarrollador en formación, apasionado por aprender y crear soluciones innovadoras.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#about-me">Sobre Mí</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Redes Sociales</h4>
+            <div class="social-links">
+                <a href="https://github.com/Mk1-mid" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/miguelcallemk1" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Miguel. Todos los derechos reservados. | Hecho con <span class="heart">❤</span></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
